@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -8,38 +9,49 @@ body {
 header {
   background-color: #000;
   padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  align-items: end;
+  justify-content: end;
 }
-
-nav a {
+.cabecalho{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-items: center;
+  margin: 20px;
+}
+.cabecalho a{
   color: white;
   text-decoration: none;
-  margin: 0 15px;
+  padding: 10px 20px;
   font-weight: bold;
 }
+.end{
+  grid-column: 2;
+  justify-items: end;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
 }
 .main-car {
-  flex: 2;
-  margin-right: 20px;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  margin: 0 20px 20px 0;
+  justify-items: start;
 }
 .main-car img {
-  width: 100%;
+  width: 60%;
   border-radius: 10px;
 }
 .car-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
 }
 .car-item img {
-  width: 100%;
+  width: 80%;
   border-radius: 10px;
 }
 .car-item {
@@ -47,7 +59,6 @@ nav a {
   color: white;
 }
 .car-item .car-info {
-  position: absolute;
   bottom: 20px;
   left: 20px;
 }

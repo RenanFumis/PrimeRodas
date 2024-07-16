@@ -1,82 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <title>Loja de Carros</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: white;
-          }
-
-header {
-  background-color: #000;
-  padding: 20px;
-  display: grid;
-  align-items: end;
-  justify-content: end;
-}
-.cabecalho{
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  align-items: center;
-  margin: 20px;
-}
-.cabecalho a{
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  font-weight: bold;
-}
-.end{
-  grid-column: 2;
-  justify-items: end;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-.main-car {
-  display: grid;
-  grid-template-columns: 4fr 1fr 1fr;
-  margin: 0 20px 20px 0;
-  justify-items: start;
-}
-.main-car img {
-  width: 60%;
-  border-radius: 10px;
-}
-.car-list {
-  /* flex: 1; */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-}
-.car-item img {
-  width: 80%;
-  border-radius: 10px;
-}
-.car-item {
-  position: relative;
-  color: white;
-}
-.car-item .car-info {
-  bottom: 20px;
-  left: 20px;
-}
-footer {
-  background-color: #000;
-  padding: 10px 20px;
-  text-align: center;
-}
-    </style>
+    
 </head>
 <body>
     <header>
@@ -96,13 +27,15 @@ footer {
         
     </header>
     <div class="container">
+      {% block content %}
         <div class="main-car">
             <img src="/media/cars/carroFerrariEnzo.png" alt="Carro Principal">
-            <div class="car-info">
-                <h2>All-New 2025 QX80</h2>
-                <p>Eight-Passenger Full-Size SUV</p>
+            <div class="cars-info">
+                <h2>{{ cars.Toyota.model}}</h2>
+                <p>Preço: R${{ cars.Toyota.price }},00</p>
             </div>
         </div>
+        {% endblock %}
         <div class="car-list">
             <div class="car-item">
                 <img src="/media/cars/carroFerrariEnzo.png" alt="Carro 1">
