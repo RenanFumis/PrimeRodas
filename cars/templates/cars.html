@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Loja de Carros</title>
+    
+</head>
+<body>
+    <header>
+        <div class="cabecalho">
+          <nav class="center">
+            <a href="#">Veículos</a>
+
+            <a href="#">Proprietários</a>
+            <a href="#">Notícias</a>
+          </nav>
+          <nav  class="end">
+            <a href="#" style="background-color: #D4AF37; padding: 10px 20px; border-radius: 20px;">Comprar Online</a>
+          </nav>
+        </div>
+        
+            
+        
+    </header>
+    <div class="container">
+      {% block content %}
+        <div class="main-car">
+            <img src="/media/cars/carroFerrariEnzo.png" alt="Carro Principal">
+            <div class="cars-info">
+                <h2>{{ cars.Toyota.model}}</h2>
+                <p>Preço: R${{ cars.Toyota.price }},00</p>
+            </div>
+        </div>
+        {% endblock %}
+        <div class="car-list">
+            <div class="car-item">
+                <img src="/media/cars/carroFerrariEnzo.png" alt="Carro 1">
+                <div class="car-info">
+                    <h3>QX60</h3>
+                    <p>Seven-Passenger Crossover SUV</p>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="/media/cars/carroFerrariEnzo.png" alt="Carro 2">
+                <div class="car-info">
+                    <h3>QX55</h3>
+                    <p>Five-Passenger Crossover Coupe</p>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="/media/cars/carroFerrariEnzo.png" alt="Carro 3">
+                <div class="car-info">
+                    <h3>QX50</h3>
+                    <p>Five-Passenger Crossover SUV</p>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="/media/cars/carroFerrariEnzo.png" alt="Carro 4">
+                <div class="car-info">
+                    <h3>Q50</h3>
+                    <p>Four-Door Performance Sedan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 Prime Rodas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
