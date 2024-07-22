@@ -3,7 +3,7 @@ from cars.models import Car
 
 def cars_view(request):
     car_main = Car.objects.get(pk=1)
-    cars = Car.objects.all()
+    cars = Car.objects.exclude(pk=car_main.pk)
     
 
     return render(

@@ -6,14 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <title>Loja de Carros</title>
+    <link rel="icon" href="/media/flavicon/carro-esporte.png">
+    <title>Prime Rodas</title>
 
 </head>
 
 <body>
     <header>
         <div class="cabecalho">
+            <nav class="start">
+                <a class="logo" href="#">Prime Rodas</a>
+            </nav>
             <nav class="center">
                 <a href="#">Veículos</a>
 
@@ -32,11 +35,11 @@
     <div class="container">
         {% block content %}
         <div class="main-car">
-            <img src="/media/cars/carroFerrariEnzo.png" alt="Carro Principal">
+            <img src="{{ car_main.photo.url }}" alt="Carro Principal">
             <div class="cars-info">
                 <h1>{{ car_main.model}} - {{ car_main.model_year }}</h1>
                 <h4>{{ car_main.brand }}</h4>
-                <p>Preço: R${{ car_main.value }}</p>
+                <p>Preço: R${{ car_main.value }}0</p>
             </div>
         </div>
 
@@ -45,10 +48,11 @@
             
             {% for car in cars %}
             <div class="car-item">
-                <img src="/media/cars/carroFerrariEnzo.png" alt="Carro 1">
+                <img src="{{ car.photo.url }}" alt="Carro 1">
                 <div class="car-info">
-                    <h3>{{ car.model }}</h3>
-                    <p>Preço: R${{ car.value }}</p>
+                    <h3>{{ car.model }} - {{ car.model_year }}</h3>
+                    <span>{{ car.brand }}</span>
+                    <p>Preço: R${{ car.value }}0</p>
                 </div>
             </div>
 
