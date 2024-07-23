@@ -21,7 +21,7 @@ header {
 }
 .cabecalho{
   display: grid;
-  grid-template-columns: 2fr 1fr 4fr 1fr;
+  grid-template-columns: 2fr 1fr 4fr 2fr;
   align-items: center;
   margin: 20px;
 }
@@ -80,6 +80,11 @@ header {
 }
 .car-item .car-info p {
   margin-top: 25px;
+}
+
+.car-list :hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 span{
   font-size: 12px;
