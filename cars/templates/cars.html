@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="/media/flavicon/carro-esporte.png">
     <title>Prime Rodas</title>
-
 </head>
 
 <body>
@@ -19,49 +18,52 @@
             </nav>
             <nav class="center">
                 <a href="#">Veículos</a>
-
                 <a href="#">Proprietários</a>
                 <a href="#">Notícias</a>
             </nav>
             <nav class="end">
                 <form method="GET" action="{% url 'cars_list' %}">
                     <input type="text" name="search" placeholder="Buscar carro..."
-                        style=" padding: 10px 20px; border-radius: 20px 0px 0px 20px;">
+                        style="padding: 10px 20px; border-radius: 20px 0px 0px 20px;">
                     <button type="submit"
                         style="background-color: #D4AF37; padding: 10px 20px; border-radius: 0px 20px 20px 0px;">Buscar</button>
-
                 </form>
             </nav>
         </div>
-
     </header>
     <div class="container">
         {% block content %}
+
+        {% if car_main %}
         <div class="main-car">
             <img src="{{ car_main.photo.url }}" alt="Carro Principal">
             <div class="cars-info">
-                <h1>{{ car_main.model}} - {{ car_main.model_year }}</h1>
+                <h1>{{ car_main.model }} - {{ car_main.model_year }}</h1>
                 <h4>{{ car_main.brand }}</h4>
                 <p>Preço: R${{ car_main.value }}0</p>
             </div>
         </div>
-
-        <div class="car-list">
-
-                {% for car in cars %}
-                <div class="car-item">
-                    <img src="{{ car.photo.url }}" alt="Carro 1">
-                    <div class="car-info">
-                        <h3>{{ car.model }} - {{ car.model_year }}</h3>
-                        <span>{{ car.brand }}</span>
-                        <p>Preço: R${{ car.value }}0</p>
-                    </div>
-                </div>
-                {% endfor %}
+        {% else %}
+        <div class="main-car">
+            <img src="{% static 'images/car_not_found.png' %}" alt="Carro não encontrado">
 
         </div>
-        {% endblock %}
+        {% endif %}
 
+        <div class="car-list">
+            {% for car in cars %}
+            <div class="car-item">
+                <img src="{{ car.photo.url }}" alt="Carro {{ car.model }}">
+                <div class="car-info">
+                    <h3>{{ car.model }} - {{ car.model_year }}</h3>
+                    <span>{{ car.brand }}</span>
+                    <p>Preço: R${{ car.value }}0</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% endblock %}
     </div>
     <footer>
         <p>&copy; 2024 Prime Rodas. Todos os direitos reservados.</p>
