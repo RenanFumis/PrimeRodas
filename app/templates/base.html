@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="/media/flavicon/carro-esporte.png">
+    <title>Prime Rodas</title>
+</head>
+
+<body>
+    <header>
+        <div class="cabecalho">
+            <nav class="start">
+                <a class="logo" href="#">Prime Rodas</a>
+            </nav>
+            <nav class="center">
+                <a href="#">Veículos</a>
+                <a href="#">Proprietários</a>
+                <a href="#">Notícias</a>
+            </nav>
+            <nav class="end">
+                <form method="GET" action="{% url 'cars_list' %}">
+                    <input type="text" name="search" placeholder="Buscar carro..."
+                        style="padding: 10px 20px; border-radius: 20px 0px 0px 20px;">
+                    <button type="submit"
+                        style="background-color: #D4AF37; padding: 10px 20px; border-radius: 0px 20px 20px 0px;">Buscar</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+{% block content %}
+{% endblock %}
+
+
+
+    <footer>
+      <p>&copy; 2024 Prime Rodas. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>
+
+
