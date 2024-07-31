@@ -39,10 +39,10 @@ def new_car_view(request):
 
     else:
         new_car_form = CarForm()
-        return render(
-            request,
-            'new_car.html',
-            {
-                'new_car_form': new_car_form,
-            }
-            )
+    return render(
+        request,
+        'new_car.html',
+        {
+            'new_car_form': new_car_form,
+        }
+        )

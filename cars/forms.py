@@ -1,5 +1,5 @@
 from django import forms
-from cars.models import Brand, Car
+from cars.models import Car
 
 # Aqui estamos criando um formulário para o modelo Car de forma manual
 # class CarForm(forms.Form):
@@ -25,8 +25,17 @@ from cars.models import Brand, Car
 #         car.save()
 #         return car
 
-# Aqui estamos criando um formulário para o modelo Car de forma automática (mais usual)
+
+#Aqi estamos criando um formulário para o modelo Car de forma automática (mais prático)
 class CarForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = '__all__'
+
+# O nome clean_<nome do campo> é um método que é chamado automaticamente pelo Django e serve para validar um campo específico
+
+    def clean_value(self):
+        value = self.cleaned_data.get('value')
+        if value is not None and value < 700000:
+            self.add_error('value', 'O valor do carro deve ser maior que R$700.000,00')
+        return value
