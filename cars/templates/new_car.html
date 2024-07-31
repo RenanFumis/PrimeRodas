@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="custom-form-container">
+    <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms">
+        {% csrf_token %}
+        <table class="custom-table">
+          {{ new_car_form.as_table }}
+        </table>
+        <button type="submit" class="custom-submit-btn">Cadastrar</button>
+    </form>
+</div>
+{% endblock %}

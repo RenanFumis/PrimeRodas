@@ -14,12 +14,12 @@
     <header>
         <div class="cabecalho">
             <nav class="start">
-                <a class="logo" href="#">Prime Rodas</a>
+                <a class="logo" href="{% url 'cars_list' %}">Prime Rodas</a>
             </nav>
             <nav class="center">
                 <a href="#">Veículos</a>
-                <a href="#">Proprietários</a>
                 <a href="#">Notícias</a>
+                <a href="{% url 'new_car' %}">Registre seu carro</a>
             </nav>
             <nav class="end">
                 <form method="GET" action="{% url 'cars_list' %}">
@@ -32,16 +32,14 @@
         </div>
     </header>
 
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 
 
 
     <footer>
-      <p>&copy; 2024 Prime Rodas. Todos os direitos reservados.</p>
-  </footer>
+        <p>&copy; 2024 Prime Rodas. Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>
-
-
