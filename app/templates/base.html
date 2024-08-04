@@ -18,8 +18,17 @@
             </nav>
             <nav class="center">
                 <a href="#">Veículos</a>
-                <a href="#">Notícias</a>
+                {% if user.is_authenticated %}
                 <a href="{% url 'new_car' %}">Registre seu carro</a>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                <a href="{% url 'register' %}">Cadastre-se</a>
+                <a href="{% url 'login' %}">login</a>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Sair</a>
+                {% endif %}
             </nav>
             <nav class="end">
                 <form method="GET" action="{% url 'cars_list' %}">
