@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="custom-form-container">
+  <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms">
+    {% csrf_token %}
+    <table class="custom-table">
+      <div class="form-group">
+        <label for="username">Usuário: </label>
+        {{ user_form.username }}
+        {% if user_form.username.errors %}
+          <div class="error-message">
+            {% for error in user_form.username.errors %}
+              <p class="is-invalid">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="password1">Senha: </label>
+        {{ user_form.password1 }}
+        {% if user_form.password1.errors %}
+          <div class="error-message">
+            {% for error in user_form.password1.errors %}
+              <p class="is-invalid">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="password2">Confirmação de Senha: </label>
+        {{ user_form.password2 }}
+        {% if user_form.password2.errors %}
+          <div class="error-message">
+            {% for error in user_form.password2.errors %}
+              <p class="is-invalid">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </table>
+    <button type="submit" class="custom-submit-btn">Cadastrar</button>
+  </form>
+</div>
+{% endblock %}
