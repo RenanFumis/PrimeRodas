@@ -18,6 +18,7 @@
           <div class="btn-position">
             <a href="{% url 'car_update' pk=object.pk %}" class="custom-submit-btn">Editar</a>
             
+            <a href="{% url 'car_delete' pk=object.pk %}" class="custom-submit-btn">Deletar</a>
           </div>
           {% endif %}
       </div>

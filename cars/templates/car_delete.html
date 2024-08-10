@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="custom-form-container">
+
+    <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms-delete">
+    <h1 class="custom-form-title">Deletar Carro</h1>
+
+    <table class="custom-table">
+      <p>Tem certeza que deseja deletar o carro da {{ object.brand }} </p>
+
+      <p> Modelo: {{ object.model }}</p>
+    </table>
+
+    {% csrf_token %}
+    <div class="btn-position">
+      <button type="submit" class="custom-submit-btn">Deletar</button>
+      <a href="{% url 'car_update' pk=object.pk %}" class="custom-submit-btn">Cancelar</a>
+    </div>
+  </form>
+
+</div>
+{% endblock %}
