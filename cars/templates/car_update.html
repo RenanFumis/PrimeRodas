@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="custom-form-container">
+  <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms">
+    {% csrf_token %}
+    <h1 class="custom-form-title">Atualizar Carro</h1>
+    <table class="custom-table">
+      {{ form.as_table }}
+    </table>
+    <div class="btn-position">
+      <button type="submit" class="custom-submit-btn">Salvar Alterações</button>
+      <button href="{% url 'cars_list' %}" class="custom-submit-btn">Cancelar Alterações</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

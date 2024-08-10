@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="custom-form-container">
-    <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms">
+    <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms-login">
         {% csrf_token %}
         <table class="custom-table">
           {{ login_form.as_table }}

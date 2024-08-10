@@ -5,7 +5,7 @@
 <div class="container">
     {% if car_main %}
     <div class="main-car">
-        <img src="{{ car_main.photo.url }}" alt="Carro Principal">
+        <a href="{% url 'car_detail' car_main.pk %}"><img src="{{ car_main.photo.url }}" alt="Carro Principal"></a>
         <div class="cars-info">
             <h1>{{ car_main.model }} - {{ car_main.model_year }}</h1>
             <h4>{{ car_main.brand }}</h4>
@@ -21,7 +21,9 @@
     <div class="car-list">
         {% for car in cars %}
         <div class="car-item">
-            <img src="{{ car.photo.url }}" alt="Carro {{ car.model }}">
+            <a href="{% url 'car_detail' car.pk %}">
+<img class="imagem" src="{{ car.photo.url }}" alt="Carro {{ car.model }}">
+</a>
             <div class="car-info">
                 <h3>{{ car.model }} - {{ car.model_year }}</h3>
                 <span>{{ car.brand }}</span>
