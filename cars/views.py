@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from cars.models import Car
 from cars.forms import CarForm
 from django.views import View
@@ -41,6 +43,7 @@ class CarsListView(ListView):
 
         return context
 
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class NewCarCreateView(CreateView):
     model = Car
     form_class = CarForm
@@ -51,6 +54,7 @@ class CarDetailView(DetailView):
     model = Car
     template_name = 'car_detail.html'
 
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class CarUpdateView(UpdateView):
     model = Car
     form_class = CarForm
@@ -59,7 +63,7 @@ class CarUpdateView(UpdateView):
     def get_success_url(self):
         return reverse_lazy('car_detail', kwargs={'pk': self.object.pk})
 
-
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class CarDeleteView(DeleteView):
     model = Car
     template_name = 'car_delete.html'
