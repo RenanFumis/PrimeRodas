@@ -4,24 +4,31 @@
 {% block content %}
 
 <div class="container">
-  
-  <div class="main-car">
-    <img src="{{ object.photo.url }}" alt="{{ object.model}} - {{ object.brand }}">
-      <div class="car-info">
-          <h1>{{ object.model }} - {{ object.brand }}</h1>
-          <h2>{{ object.factory_year }}</h2>
-          <p>Preço: R${{ object.value }}0</p>
-          <h4>Descrição</h4>
-          <p>{{ object.description }}</p>
 
-          {% if user.is_authenticated %}
-          <div class="btn-position">
-            <a href="{% url 'car_update' pk=object.pk %}" class="custom-submit-btn">Editar</a>
-            
-            <a href="{% url 'car_delete' pk=object.pk %}" class="custom-submit-btn">Deletar</a>
-          </div>
-          {% endif %}
+  <div class="main-car">
+
+
+    {% if object.photo %}
+    <img src="{{ object.photo.url }}" alt="{{ object.model}} - {{ object.brand }}">
+    {% else %}
+    <img src="{% static 'images/carroNaoRegistrado.png' %}" alt="Carro não encontrado">
+    {% endif %}
+
+    <div class="car-info">
+      <h1>{{ object.model }} - {{ object.brand }}</h1>
+      <h2>{{ object.factory_year }}</h2>
+      <p>Preço: R${{ object.value }}0</p>
+      <h4>Descrição</h4>
+      <p>{{ object.description }}</p>
+
+      {% if user.is_authenticated %}
+      <div class="btn-position">
+        <a href="{% url 'car_update' pk=object.pk %}" class="custom-submit-btn">Editar</a>
+
+        <a href="{% url 'car_delete' pk=object.pk %}" class="custom-submit-btn">Deletar</a>
       </div>
+      {% endif %}
+    </div>
 
   </div>
 

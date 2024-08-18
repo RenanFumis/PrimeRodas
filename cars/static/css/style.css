@@ -129,59 +129,6 @@ span{
   gap: 20px;
 }
 
-@media (max-width: 1400px) {
-  .cabecalho {
-    grid-template-columns: 1fr 2fr 3fr 1fr;
-    margin: 10px;
-  }
-
-  .main-car {
-    grid-template-columns: 1fr;
-    margin: 10px;
-  }
-
-  .main-car img {
-    width: 100%;
-  }
-
-  .car-list {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
-  }
-
-  .car-item img {
-    width: 100%;
-  }
-
-  .car-item .car-info {
-    bottom: 15px;
-    left: 15px;
-    line-height: 1.5;
-  }
-
-  span {
-    font-size: 1em;
-  }
-
-}
-
-/* Para telas menores, como tablets */
-@media (max-width: 1000px) {
-  .cabecalho {
-    grid-template-columns: 1fr 2fr;
-  }
-
-  .main-car {
-    grid-template-columns: 1fr;
-    margin: 10px 0;
-  }
-
-  .car-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-  }
-}
-
 .custom-form-container {
   display: flex;
   justify-content: center;
@@ -329,16 +276,77 @@ span{
   color: red;
 }
 
-/* Para telas de celular */
-@media (max-width: 600px) {
+
+@media (max-width: 1450px) {
   .cabecalho {
+    grid-template-columns: 2fr  2fr;
+    margin: 10px;
+  }
+
+  .main-car {
     grid-template-columns: 1fr;
+    margin: 10px;
+  }
+
+  .main-car img {
+    width: 100%;
+  }
+
+  .car-list {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+  }
+
+  .car-item img {
+    width: 100%;
+  }
+
+  .car-item .car-info {
+    bottom: 15px;
+    left: 15px;
+    line-height: 1.5;
+  }
+
+  span {
+    font-size: 1em;
+  }
+
+}
+
+/* Para telas menores, como tablets */
+@media (max-width: 1000px) {
+  .cabecalho {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .main-car {
+    grid-template-columns: 1fr;
+    margin: 10px 0;
+  }
+
+  .car-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+}
+
+
+/* Para telas de celular */
+@media (max-width: 900px) {
+  .cabecalho {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
   }
 
   .cabecalho a {
-    display: block;
-    margin: 5px 0;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .cabecalho nav{
+    margin-top: 5px;
   }
 
   .main-car {
@@ -355,5 +363,11 @@ span{
     bottom: 10px;
     left: 10px;
     line-height: 1.2;
+  }
+}
+
+@media (max-width: 400px){
+  
+  form{ display: none;
   }
 }
