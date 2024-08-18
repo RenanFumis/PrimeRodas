@@ -277,7 +277,7 @@ span{
 }
 
 
-@media (max-width: 1400px) {
+@media (max-width: 1450px) {
   .cabecalho {
     grid-template-columns: 2fr  2fr;
     margin: 10px;
@@ -332,7 +332,7 @@ span{
 
 
 /* Para telas de celular */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .cabecalho {
     display: flex;
     align-items: center;
@@ -363,5 +363,11 @@ span{
     bottom: 10px;
     left: 10px;
     line-height: 1.2;
+  }
+}
+
+@media (max-width: 400px){
+  
+  form{ display: none;
   }
 }
