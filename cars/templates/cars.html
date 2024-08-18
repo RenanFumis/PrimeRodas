@@ -5,11 +5,15 @@
 <div class="container">
     {% if car_main %}
     <div class="main-car">
+        {% if car_main.photo %}
         <a href="{% url 'car_detail' car_main.pk %}"><img src="{{ car_main.photo.url }}" alt="Carro Principal"></a>
+        {% else %}
+        <a href="{% url 'car_detail' car_main.pk %}"><img src="{% static 'images/carroNaoRegistrado.png' %}" alt="Carro não encontrado"></a>
+        {% endif %}
         <div class="cars-info">
             <h1>{{ car_main.model }} - {{ car_main.model_year }}</h1>
             <h4>{{ car_main.brand }}</h4>
-            <p>Preço: R${{ car_main.value }}0</p>
+            <p>Valor: R${{ car_main.value }}0</p>
         </div>
     </div>
     {% else %}
@@ -31,7 +35,7 @@
             <div class="car-info">
                 <h3>{{ car.model }} - {{ car.model_year }}</h3>
                 <span>{{ car.brand }}</span>
-                <p>Preço: R${{ car.value }}0</p>
+                <p>Valor: R${{ car.value }}0</p>
             </div>
         </div>
         {% endfor %}

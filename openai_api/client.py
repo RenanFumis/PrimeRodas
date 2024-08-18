@@ -6,7 +6,7 @@ load_dotenv()
 
 def get_car_ai_bio(model, brand, year):
     
-    prompt = "De uma descrição sobre o carro {} {} {} com no máximo 400 caracteres, não precisa citar a brand do carro"
+    prompt = "De uma descrição sobre o carro {} {} {} com no máximo 680 caracteres, não precisa citar a brand do carro"
 
     genai.configure(api_key=os.getenv('secret_key'))
     prompt = prompt.format(brand, model, year)
