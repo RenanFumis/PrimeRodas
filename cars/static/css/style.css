@@ -71,6 +71,15 @@ header {
   gap: 20px;
   padding: 20px;
 }
+
+.container_list{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+
 .main-car {
   display: grid;
   grid-template-columns: 4fr 2fr;
@@ -86,6 +95,23 @@ header {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
 }
+
+.car-list_list {
+  display: grid;
+  grid-template-columns: 4fr 3fr 6fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.imagem_list{
+  width: 20%;
+  border-radius: 10px;
+}
+
+.car-info_list{
+  line-height: 2px;
+}
+
 .car-item img {
   width: 80%;
   border-radius: 10px;
@@ -110,8 +136,6 @@ header {
 span{
   font-size: 12px;
 }
-
-
 
 .custom-container-forms textarea {
   width: 90%;

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container_list">
+  <div class="custom-form-container">
+
+    <div class="car-list_list">
+      {% for car in cars %}
+      <div class="car-item">
+        <a href="{% url 'car_detail' car.pk %}">
+          {% if car.photo %}
+          <img class="imagem_list" src="{{ car.photo.url }}" alt="Carro {{ car.model }}">
+          {% else %}
+          <img class="imagem" src="{% static 'images/carroNaoRegistrado.png' %}" alt="Carro não encontrado">
+          {% endif %}
+        </a>
+      </div>
+
+      <div class="car-info_list">
+        <h3>{{ car.model }}</h3>
+        <h4>{{ car.model_year }}</h4>
+        <span>{{ car.brand }}</span>
+        <p>Valor: R${{ car.value }}0</p>
+      </div>
+
+      <div class="car-info_list_description">
+        <span>Descrição: {{ car.description }}</span>
+
+      </div>
+
+      {% endfor %}
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}
