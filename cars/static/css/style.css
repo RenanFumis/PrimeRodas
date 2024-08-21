@@ -28,6 +28,10 @@ header {
   justify-content: space-around;
 }
 
+.summary{
+  font-size: 1rem;
+}
+
 .logo {
   font-size: 3em;
   font-family: monospace;
@@ -98,7 +102,7 @@ header {
 
 .car-list_list {
   display: grid;
-  grid-template-columns: 4fr 3fr 6fr;
+  grid-template-columns: 4fr 4fr 4fr;
   gap: 20px;
   align-items: center;
 }
@@ -352,6 +356,11 @@ span{
     grid-template-columns: 1fr 1fr;
     gap: 6px;
   }
+
+  .imagem:hover {
+    cursor: pointer;
+    transform: none;
+  }
 }
 
 
@@ -387,6 +396,11 @@ span{
     bottom: 10px;
     left: 10px;
     line-height: 1.2;
+  }
+
+  .imagem:hover {
+    cursor: pointer;
+    transform: none;
   }
 }
 

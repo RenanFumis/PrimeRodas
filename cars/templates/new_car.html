@@ -2,12 +2,43 @@
 
 {% block content %}
 <div class="custom-form-container">
-    <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms">
-        {% csrf_token %}
-        <table class="custom-table">
-          {{ form.as_table }}
-        </table>
-        <button type="submit" class="custom-submit-btn">Cadastrar</button>
-    </form>
+  <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms">
+    {% csrf_token %}
+    <table class="custom-table">
+      <tr>
+        <td>{{ form.brand.label_tag }}</td>
+        <td>{{ form.brand }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.model.label_tag }}</td>
+        <td>{{ form.model }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.factory_year.label_tag }}</td>
+        <td>{{ form.factory_year }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.model_year.label_tag }}</td>
+        <td>{{ form.model_year }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.plate.label_tag }}</td>
+        <td>{{ form.plate }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.value.label_tag }}</td>
+        <td>{{ form.value }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.photo.label_tag }}</td>
+        <td>{{ form.photo }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.description.label_tag }}</td>
+        <td>{{ form.description }}</td>
+      </tr>
+    </table>
+    <button type="submit" class="custom-submit-btn">Cadastrar</button>
+  </form>
 </div>
 {% endblock %}

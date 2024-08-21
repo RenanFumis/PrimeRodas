@@ -13,7 +13,7 @@
         <div class="cars-info">
             <h1>{{ car_main.model }} - {{ car_main.model_year }}</h1>
             <h4>{{ car_main.brand }}</h4>
-            <p>Valor: R${{ car_main.value }}0</p>
+            <p>Valor estimado: R${{ car_main.value }}0</p>
         </div>
     </div>
     {% else %}
@@ -35,7 +35,7 @@
             <div class="car-info">
                 <h3>{{ car.model }} - {{ car.model_year }}</h3>
                 <span>{{ car.brand }}</span>
-                <p>Valor: R${{ car.value }}0</p>
+                <p>Valor estimado: R${{ car.value }}0</p>
             </div>
         </div>
         {% endfor %}
