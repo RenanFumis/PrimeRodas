@@ -27,5 +27,6 @@ urlpatterns = [
 
     path('car/<int:pk>/update/', CarUpdateView.as_view(), name='car_update'),
 
-    path('car/<int:pk>/delete/', CarDeleteView.as_view(), name='car_delete')
+    path('car/<int:pk>/delete/', CarDeleteView.as_view(), name='car_delete'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #aqui no static, estamos dizendo que se a url for para media, ele vai procurar no MEDIA_ROOT

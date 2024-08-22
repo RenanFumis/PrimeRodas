@@ -77,3 +77,4 @@ class CarsList(ListView):
     def get_queryset(self):
         # No need for search or highlighting, return all cars
         return Car.objects.all()
+    
