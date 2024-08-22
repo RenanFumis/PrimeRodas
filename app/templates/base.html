@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="/media/flavicon/carro-esporte.png">
+    
     <title>Prime Rodas</title>
 </head>
 
@@ -17,7 +18,7 @@
                 <a class="logo" href="{% url 'cars_list' %}">Prime Rodas</a>
             </nav>
             <nav class="center">
-                <a href="#">Veículos</a>
+                <a href="{% url 'cars_list_view' %}">Veículos</a>
                 {% if user.is_authenticated %}
                 <a href="{% url 'new_car' %}">Registre seu carro</a>
                 {% endif %}
@@ -44,10 +45,10 @@
     {% block content %}
     {% endblock %}
 
-
 </body>
 <footer>
     <p>&copy; 2024 Prime Rodas. Todos os direitos reservados.</p>
+    
 </footer>
 
 

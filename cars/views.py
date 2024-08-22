@@ -68,3 +68,13 @@ class CarDeleteView(DeleteView):
     model = Car
     template_name = 'car_delete.html'
     success_url = '/cars/'
+
+class CarsList(ListView):
+    model = Car
+    template_name = 'cars_list_view.html'
+    context_object_name = 'cars'
+
+    def get_queryset(self):
+        # No need for search or highlighting, return all cars
+        return Car.objects.all()
+    

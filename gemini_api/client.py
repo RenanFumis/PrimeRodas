@@ -14,3 +14,13 @@ def get_car_ai_bio(model, brand, year):
 
     response = gemini_model.generate_content(prompt)
     return response.text
+
+def get_summary_car(model, brand, year):
+    prompt = "De um resumo sobre o carro {} {} {} com no máximo 200 caracteres, não precisa citar a brand do carro"
+    
+    genai.configure(api_key=os.getenv('secret_key'))
+    prompt = prompt.format(brand, model, year)
+    gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+    
+    response = gemini_model.generate_content(prompt)
+    return response.text

@@ -28,6 +28,10 @@ header {
   justify-content: space-around;
 }
 
+.summary{
+  font-size: 1rem;
+}
+
 .logo {
   font-size: 3em;
   font-family: monospace;
@@ -71,6 +75,15 @@ header {
   gap: 20px;
   padding: 20px;
 }
+
+.container_list{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+
 .main-car {
   display: grid;
   grid-template-columns: 4fr 2fr;
@@ -86,6 +99,23 @@ header {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
 }
+
+.car-list_list {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.imagem_list{
+  width: 20%;
+  border-radius: 10px;
+}
+
+.car-info_list{
+  line-height: 2px;
+}
+
 .car-item img {
   width: 80%;
   border-radius: 10px;
@@ -110,8 +140,6 @@ header {
 span{
   font-size: 12px;
 }
-
-
 
 .custom-container-forms textarea {
   width: 90%;
@@ -328,6 +356,11 @@ span{
     grid-template-columns: 1fr 1fr;
     gap: 6px;
   }
+
+  .imagem:hover {
+    cursor: pointer;
+    transform: none;
+  }
 }
 
 
@@ -363,6 +396,11 @@ span{
     bottom: 10px;
     left: 10px;
     line-height: 1.2;
+  }
+
+  .imagem:hover {
+    cursor: pointer;
+    transform: none;
   }
 }
 
