@@ -491,6 +491,14 @@ span{
     font-size: 0.9rem;
   }
 
+  .custom-container-forms select,
+  .custom-container-forms input[type="file"],
+  .custom-container-forms input[type="text"],
+  .custom-container-forms input[type="number"] {
+    width: 80%;
+    font-size: 0.85rem;
+  }
+
   .custom-container-forms textarea{
     display: none;
   }
@@ -498,4 +506,5 @@ span{
   tr:last-child{
     display: none;
   }
+
 }
