@@ -492,6 +492,7 @@ span{
   }
 
   .custom-container-forms select,
+  .custom-container-forms input[type="email"],
   .custom-container-forms input[type="file"],
   .custom-container-forms input[type="text"],
   .custom-container-forms input[type="number"] {
@@ -499,11 +500,12 @@ span{
     font-size: 0.85rem;
   }
 
+
   .custom-container-forms textarea{
     display: none;
   }
 
-  tr:last-child{
+  .custom-table td label[for="id_description"] {
     display: none;
   }
 
