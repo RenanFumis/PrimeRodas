@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="custom-form-container">
+  <form action="" method="post" enctype="multipart/form-data" class="custom-container-forms">
+    {% csrf_token %}
+    <h1 class="custom-form-title">Cadastre-se</h1>
+    <p class="custom-form-subtitle">E receba nossas novidades</p>
+    <table class="custom-table">
+      <tr>
+        <td>{{ form.name.label_tag }}</td>
+        <td>{{ form.name }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.last_name.label_tag }}</td>
+        <td>{{ form.last_name }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.email.label_tag }}</td>
+        <td>{{ form.email }}
+          {% if form.email.errors %}
+          <div class="error-message">{{ form.email.errors }}</div>
+        {% endif %}
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="custom-submit-btn">Cadastrar</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,6 +1,11 @@
 from django import forms
-from cars.models import Car
+from cars.models import Car, Register
+from django.core.validators import RegexValidator
+from django.core.exceptions import ValidationError
 
+def validate_unique_email(value):
+    if Register.objects.filter(email=value).exists():
+        raise ValidationError('Este email já está registrado.')
 #Aqi estamos criando um formulário para o modelo Car de forma automática (mais prático)
 class CarForm(forms.ModelForm):
     class Meta:
@@ -25,6 +30,28 @@ class CarForm(forms.ModelForm):
             self.add_error('value', 'O valor do carro deve ser maior que R$100.000,00')
         return value
 
+class RegisterForm(forms.ModelForm):
+
+    class UserForm(forms.ModelForm):
+
+        email = forms.EmailField(
+            validators=[
+                RegexValidator(
+                regex=r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$',
+                message= 'Digite um email válido'
+            ),
+            validate_unique_email
+            ]
+        )
+    class Meta:
+        model = Register
+        fields = ['name', 'last_name', 'email']
+
+        labels = {
+                    'name': 'Nome',
+                    'last_name': 'Sobrenome',
+                    'email': 'Email',
+                }
 
 
 
