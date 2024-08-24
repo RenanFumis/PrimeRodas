@@ -437,6 +437,14 @@ span{
     transform: none;
   }
 
+  .custom-container-forms select,
+  .custom-container-forms input[type="text"],
+  .container-forms input[type="number"],
+  .container-forms input[type="number"]{
+    width: 90%;
+    font-size: 0.85rem;
+  }
+
 }
 
 @media (max-width: 700px){
@@ -449,16 +457,19 @@ span{
   width: 100%;
   gap: 5px;
   }
+
+  .custom-container-forms select,
   .custom-container-forms input[type="text"],
   .custom-container-forms input[type="email"],
   .custom-container-forms-login input[type="text"],
   .custom-container-forms-login input[type="password"]{
-    width: 90%;
+    width: 70%;
     font-size: 0.85rem;
   }
   .custom-container-forms td{
     padding: 5px;
   }
+
 
   label{
     font-size: 0.85rem;
@@ -478,5 +489,13 @@ span{
 
   .summary{
     font-size: 0.9rem;
+  }
+
+  .custom-container-forms textarea{
+    display: none;
+  }
+
+  tr:last-child{
+    display: none;
   }
 }
