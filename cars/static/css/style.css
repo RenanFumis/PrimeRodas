@@ -28,6 +28,12 @@ header {
   justify-content: space-around;
 }
 
+.text-congratulation{
+  font-size: 1.3rem;
+  text-align: center;
+
+}
+
 .summary{
   font-size: 1rem;
 }
@@ -250,6 +256,7 @@ span{
 }
 
 .custom-container-forms input[type="text"],
+.custom-container-forms input[type="email"],
 .custom-container-forms input[type="password"],
 .custom-container-forms select,
 .custom-container-forms input[type="number"] {
@@ -365,6 +372,33 @@ span{
 
 
 /* Para telas de celular */
+
+@media (max-width: 1100px){
+  .container_list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 850px){
+  .container_list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .car-list_list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+
 @media (max-width: 900px) {
   .cabecalho {
     display: flex;
@@ -402,10 +436,47 @@ span{
     cursor: pointer;
     transform: none;
   }
+
+}
+
+@media (max-width: 700px){
+  
+  .custom-container-forms,
+  .custom-container-forms-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+  }
+  .custom-container-forms input[type="text"],
+  .custom-container-forms input[type="email"],
+  .custom-container-forms-login input[type="text"],
+  .custom-container-forms-login input[type="password"]{
+    width: 90%;
+    font-size: 0.85rem;
+  }
+  .custom-container-forms td{
+    padding: 5px;
+  }
+
+  label{
+    font-size: 0.85rem;
+  
+  }
 }
 
 @media (max-width: 400px){
   
   form{ display: none;
+  }
+
+  .container_list{
+    padding: 2px;
+    font-size: 0.85rem;
+  }
+
+  .summary{
+    font-size: 0.9rem;
   }
 }

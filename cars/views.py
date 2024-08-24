@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from cars.models import Car
-from cars.forms import CarForm
+from cars.forms import CarForm, RegisterForm
 from django.views import View
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
@@ -78,3 +78,18 @@ class CarsList(ListView):
         # No need for search or highlighting, return all cars
         return Car.objects.all()
     
+class RegisterView(View):
+    def get(self, request):
+        form = RegisterForm()
+        return render(request, 'register.html', {'form': form})
+    
+    def post(self, request):
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('congratulations')
+        return render(request, 'register.html', {'form': form})
+class CongratulationsView(View):
+
+    def get(self,request):
+        return render(request, 'congratulations.html')

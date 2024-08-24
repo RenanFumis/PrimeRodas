@@ -33,3 +33,12 @@ class CarInventory(models.Model):
 
     def __str__(self):
         return f'{self.cars_count} - {self.cars_value} - {self.created_at}'
+    
+class Register(models.Model):
+    id = models.AutoField(primary_key=True)
+    name= models.CharField(max_length=200, blank=False, null=False)
+    last_name = models.CharField(max_length=200, blank=False, null=False)
+    email = models.EmailField(max_length=200, blank=False, null=False, unique=True)
+
+    def __str__(self):
+        return self.email
